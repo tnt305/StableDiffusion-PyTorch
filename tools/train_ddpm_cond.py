@@ -109,7 +109,7 @@ def train(args):
             param.requires_grad = False
     
     # Run training
-    for epoch_idx in range(num_epochs):
+    for epoch_idx in tqdm(range(num_epochs)):
         losses = []
         for data in tqdm(data_loader):
             cond_input = None
