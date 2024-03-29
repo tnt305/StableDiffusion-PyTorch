@@ -71,8 +71,8 @@ class LPIPS(nn.Module):
         self.lins = nn.ModuleList([self.lin0, self.lin1, self.lin2, self.lin3, self.lin4])
         
         # Load the weights of trained LPIPS model
-        model_dir = os.path.join(os.path.dirname(__file__), 'weights', f'v{version}')
-        model_path = os.path.join(model_dir, f'{net}.pth')
+        model_path = os.path.abspath(os.path.join(inspect.getfile(self.__init__), '..', 'weights/v%s/%s.pth' % (version, net)))
+        print('Loading model from: %s' % model_path)
         
         if not os.path.exists(model_path):
             raise FileNotFoundError(f"Model weights not found at {model_path}")
