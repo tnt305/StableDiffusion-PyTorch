@@ -88,7 +88,7 @@ class LPIPS(nn.Module):
         # Load the weights of trained LPIPS model
         import inspect
         import os
-        model_path = os.path.abspath(os.path.join(inspect.getfile(self.__init__), '..', 'weights/v%s/%s.pth' % (version, net))) #'/kaggle/input/checkpoint/vgg.pth'#
+        model_path = '/kaggle/input/checkpoint/vgg.pth'#os.path.abspath(os.path.join(inspect.getfile(self.__init__), '..', 'weights/v%s/%s.pth' % (version, net))) #
         print('Loading model from: %s' % model_path)
         self.load_state_dict(torch.load(model_path, map_location= device)['state_dict'], strict=False)
         ########################
