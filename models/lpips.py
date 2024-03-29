@@ -90,7 +90,7 @@ class LPIPS(nn.Module):
         import os
         model_path = '/kaggle/input/checkpoint/vgg.pth'#os.path.abspath(os.path.join(inspect.getfile(self.__init__), '..', 'weights/v%s/%s.pth' % (version, net))) #
         print('Loading model from: %s' % model_path)
-        self.load_state_dict(torch.load(model_path, map_location= device)['state_dict'], strict=False)
+        self.load_state_dict(torch.load(model_path, map_location= device), strict=False)
         ########################
         
         # Freeze all parameters
