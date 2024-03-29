@@ -62,7 +62,7 @@ train_params:
   autoencoder_lr: 0.00001
   autoencoder_acc_steps: 4
   autoencoder_img_save_steps: 64
-  save_latents : False
+  save_latents : True
   cf_guidance_scale : 1.0
   vae_latent_dir_name: 'vae_latents'
   vqvae_latent_dir_name: 'vqvae_latents'
