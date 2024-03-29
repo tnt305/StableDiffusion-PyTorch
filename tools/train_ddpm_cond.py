@@ -56,9 +56,8 @@ def train(args):
                 text_tokenizer, text_model = get_tokenizer_and_model(condition_config['text_condition_config']
                                                                      ['text_embed_model'], device=device)
                 empty_text_embed = get_text_representation([''], text_tokenizer, text_model, device)
-            
+        
     im_dataset_cls = {
-        'mnist': MnistDataset,
         'celebhq': CelebDataset,
     }.get(dataset_config['name'])
     
